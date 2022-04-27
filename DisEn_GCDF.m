@@ -79,8 +79,8 @@ for i=1:nc^m
 end
 embd2=zeros(N-(m-1)*tau,1);
 for i = 1:m, 
-   %embd2=[z(1+(i-1)*tau:N-(m-i)*tau)]'*10^(m-i)+embd2;  %home system
-   embd2=[([z(1+(i-1)*tau:N-(m-i)*tau)])*10^(m-i)]+ embd2; % college system
+   embd2=[z(1+(i-1)*tau:N-(m-i)*tau)]'*10^(m-i)+embd2;
+   
 end
 
 pdf=zeros(1,nc^m);
