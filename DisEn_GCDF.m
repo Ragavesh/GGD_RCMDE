@@ -39,12 +39,12 @@ fy=(beta/(2*rho*gamma(1/beta)))*exp(-(abs(x - mu_x)/rho).^beta);
 %cdf
 c = 0.5*sign(x-mu_x);
 
-Fy=(c+0.5) - c.*(gammainc((1.0/beta),(abs(x-mu_x)/rho)).^beta); %/(2*gamma(1/beta));
-%from python distribution line 6822
-%Fy=(c+0.5) - c.*gammainc((1.0/beta),(abs(x-mu_x)/rho)).^beta;
+Fy=(c+0.5) - c.*(gammainc((1.0/beta),(abs(x-mu_x)/rho)).^beta); 
+%/(2*gamma(1/beta)); % not included 
 
 y=Fy;
-%y=gengauss_cdf(x,mu_x,sigma_x,beta);
+%y=gengauss_cdf(x,mu_x,sigma_x,beta); % verified with the current cdf,
+% it matches the output
 
 for i_N=1:N
     if y(i_N)==1
